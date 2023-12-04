@@ -431,8 +431,8 @@ public class IntentShim extends CordovaPlugin {
 
     private void startActivity(Intent i, boolean bExpectResult, int requestCode, CallbackContext callbackContext) {
 
-        if (i.resolveActivityInfo(this.cordova.getActivity().getPackageManager(), 0) != null)
-        {
+        // if (i.resolveActivityInfo(this.cordova.getActivity().getPackageManager(), 0) != null)
+        // {
             if (bExpectResult)
             {
                 cordova.setActivityResultCallback(this);
@@ -443,12 +443,12 @@ public class IntentShim extends CordovaPlugin {
                 this.cordova.getActivity().startActivity(i);
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
             }
-        }
-        else
-        {
-            //  Return an error as there is no app to handle this intent
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
-        }
+        // }
+        // else
+        // {
+            // //  Return an error as there is no app to handle this intent
+            // callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
+        // }
     }
 
     private void sendBroadcast(Intent intent) {
