@@ -174,7 +174,6 @@ public class IntentShim extends CordovaPlugin {
             } else {
               this.cordova.getActivity().registerReceiver(broadcastReceiver, filter);
             }
-            this.cordova.getActivity().registerReceiver(broadcastReceiver, filter);
             receiverCallbacks.put(broadcastReceiver, callbackContext);
 
             callbackContext.sendPluginResult(result);
